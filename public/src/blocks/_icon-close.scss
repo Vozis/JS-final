@@ -1,0 +1,17 @@
+.close-btn {
+  position: absolute;
+  top: 28px;
+  right: 22px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 575px) {
+    width: 10px;
+    height: 10px;
+    top: 17px;
+    right: 12px;
+  }
+}

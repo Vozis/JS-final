@@ -1,0 +1,137 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      src="https://kit.fontawesome.com/fe37802d54.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header-comp ref="header">
+        <template v-slot:search-block>
+          <search-form
+            :search="userSearch"
+            v-on:searchchange="change"
+          ></search-form>
+        </template>
+        <template v-slot:cart-block>
+          <cart ref="cart"></cart>
+        </template>
+      </header-comp>
+      <div class="page-heading">
+        <div class="page-heading__inner container">
+          <h1 class="text text--red heading-1 text--uppercase">registration</h1>
+        </div>
+      </div>
+      <div class="registration">
+        <div class="registration__inner container">
+          <form action="#" class="user-info-form registration__form">
+            <div class="text text--gray user-info-form__heading">Your Name</div>
+            <input
+              type="text"
+              class="user-info-form__input registration__input"
+              placeholder="First Name"
+            />
+            <input
+              type="text"
+              class="user-info-form__input registration__input"
+              placeholder="Last Name"
+            />
+            <div class="registration__radio">
+              <input type="radio" name="gender" value="male" />
+              <span class="text text--gray">Male</span>
+              <input type="radio" name="gender" value="female" />
+              <span class="text text--gray">Female</span>
+              <input type="radio" name="gender" value="other" />
+              <span class="text text--gray">Other</span>
+            </div>
+
+            <div class="text text--gray user-info-form__heading">
+              Login details
+            </div>
+            <input
+              type="email"
+              class="user-info-form__input registration__input"
+              placeholder="Email"
+            />
+            <input
+              type="password"
+              class="user-info-form__input registration__input"
+              placeholder="Password"
+            />
+            <div class="text text--gray registration__form-text">
+              Please use 8 or more characters, with at least 1 number and a
+              mixture of uppercase and lowercase letters
+            </div>
+            <button class="btn btn--red featured-items__btn-show">
+              JOIN NOW
+              <i
+                class="fa-solid fa-arrow-right-long btn__img btn__img--right"
+              ></i>
+            </button>
+          </form>
+          <div class="registration__perks">
+            <div class="text text--gray registration__heading">
+              LOYALTY HAS ITS PERKS
+            </div>
+            <div class="text text--gray registration__text">
+              Get in on the loyalty program where you can earn points and unlock
+              serious perks. Starting with these as soon as you join:
+            </div>
+            <ul class="registration__list">
+              <li class="registration__item registration__text">
+                15% off welcome offer
+              </li>
+              <li class="registration__item registration__text">
+                Free shipping, returns and exchanges on all orders
+              </li>
+              <li class="registration__item registration__text">
+                $10 off a purchase on your birthday
+              </li>
+              <li class="registration__item registration__text">
+                Early access to products
+              </li>
+              <li class="registration__item registration__text">
+                Exclusive offers & rewards
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <subscribe-comp></subscribe-comp>
+      <footer-comp></footer-comp>
+      <error ref="error"></error>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Добавление компонентов основных блоков -->
+    <script src="js/components/ErrorComp.js"></script>
+    <script src="js/components/MenuComp.js"></script>
+    <script src="js/components/SearchFormComp.js"></script>
+    <script src="js/components/CartComp.js"></script>
+    <script src="js/components/ProductComp.js"></script>
+    <script src="js/components/FooterComp.js"></script>
+    <script src="js/components/SubscribeComp.js"></script>
+    <script src="js/components/ServicesComp.js"></script>
+    <script src="js/components/FeaturedItemsComp.js"></script>
+    <script src="js/components/OfferComp.js"></script>
+    <script src="js/components/BrandComp.js"></script>
+    <script src="js/components/HeaderComp.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="page">
+    <div id="app">
+      <header-comp ref="header">
+        <template v-slot:search-block>
+          <search-form
+            :search="userSearch"
+            v-on:searchchange="change"
+          ></search-form>
+        </template>
+        <template v-slot:cart-block>
+          <cart ref="cart"></cart>
+        </template>
+      </header-comp>
+      <brand-comp></brand-comp>
+      <offer-comp></offer-comp>
+      <div class="featured-items container">
+        <div class="featured-items__head">
+          <h2 class="text heading-2">Fetured Items</h2>
+          <p class="text text--gray">
+            Shop for items based on what we featured in this week
+          </p>
+        </div>
+        <div class="featured-items__inner">
+          <products
+            ref="products"
+            :search="userSearch"
+            :price="priceSelected"
+          ></products>
+        </div>
+        <form action="#">
+          <button class="btn btn--red-border featured-items__btn-show">
+            Browse All Product
+          </button>
+        </form>
+      </div>
+      <services-comp></services-comp>
+      <subscribe-comp></subscribe-comp>
+      <footer-comp></footer-comp>
+      <error ref="error"></error>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Добавление компонентов основных блоков -->
+    <script src="js/components/ErrorComp.js"></script>
+    <script src="js/components/MenuComp.js"></script>
+    <script src="js/components/SearchFormComp.js"></script>
+    <script src="js/components/CartComp.js"></script>
+    <script src="js/components/ProductComp.js"></script>
+    <script src="js/components/FooterComp.js"></script>
+    <script src="js/components/SubscribeComp.js"></script>
+    <script src="js/components/ServicesComp.js"></script>
+    <script src="js/components/OfferComp.js"></script>
+    <script src="js/components/BrandComp.js"></script>
+    <script src="js/components/HeaderComp.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

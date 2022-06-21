@@ -1,0 +1,178 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      src="https://kit.fontawesome.com/fe37802d54.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="page">
+    <div id="app">
+      <header-comp ref="header">
+        <template v-slot:search-block>
+          <search-form
+            :search="userSearch"
+            v-on:searchchange="change"
+          ></search-form>
+        </template>
+        <template v-slot:cart-block>
+          <cart ref="cart"></cart>
+        </template>
+      </header-comp>
+      <div class="page-heading">
+        <div class="page-heading__inner container">
+          <h1 class="text text--red heading-1 text--uppercase">registration</h1>
+        </div>
+      </div>
+
+      <div class="cart">
+        <div class="cart__inner container">
+          <div class="cart__products">
+            <div class="cart-card cart__item">
+              <img
+                src="img/close-icon.svg"
+                alt="close-icon"
+                class="icon-close"
+              />
+              <div class="cart-card__inner">
+                <img src="img/cart-1.jpg" alt="" class="cart-card__img" />
+                <div class="cart-card__info">
+                  <div class="text text--uppercase cart-card__name">
+                    MANGO PEOPLE T-SHIRT
+                  </div>
+                  <div class="text text--cart cart-card__text cart-card__price">
+                    Price:
+                    <span class="text cart-card__text text--red">$300</span>
+                  </div>
+                  <div class="text text--cart cart-card__text cart-card__color">
+                    Color: Red
+                  </div>
+                  <div class="text text--cart cart-card__text cart-card__size">
+                    Size: Xl
+                  </div>
+                  <div class="cart-card__quantity">
+                    <span class="text text--cart cart-card__text"
+                      >Quantity:
+                    </span>
+                    <input
+                      class="quantity-input cart-card__input"
+                      type="text"
+                      value="2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cart-card cart__item">
+              <img
+                src="img/close-icon.svg"
+                alt="close-icon"
+                class="icon-close"
+              />
+              <div class="cart-card__inner">
+                <img src="img/cart-2.jpg" alt="" class="cart-card__img" />
+                <div class="cart-card__info">
+                  <div class="text text--uppercase cart-card__name">
+                    MANGO PEOPLE T-SHIRT
+                  </div>
+                  <div class="text text--cart cart-card__text cart-card__price">
+                    Price:
+                    <span class="text cart-card__text text--red">$300</span>
+                  </div>
+                  <div class="text text--cart cart-card__text cart-card__color">
+                    Color: Red
+                  </div>
+                  <div class="text text--cart cart-card__text cart-card__size">
+                    Size: Xl
+                  </div>
+                  <div class="cart-card__quantity">
+                    <span class="text text--cart cart-card__text"
+                      >Quantity:
+                    </span>
+                    <input
+                      class="quantity-input cart-card__input"
+                      type="text"
+                      value="2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cart__product-buttons">
+              <button class="btn btn--black">CLEAR SHOPPING CART</button>
+              <button class="btn btn--black">CONTINUE SHOPPING</button>
+            </div>
+          </div>
+          <div class="cart__info">
+            <form action="#" class="user-info-form cart__form">
+              <div class="text text--gray user-info-form__heading">
+                SHIPPING ADRESS
+              </div>
+              <input
+                type="text"
+                class="user-info-form__input cart__input"
+                placeholder="Bangladesh"
+              />
+              <input
+                type="text"
+                class="user-info-form__input cart__input"
+                placeholder="State"
+              />
+              <input
+                type="text"
+                class="user-info-form__input cart__input"
+                placeholder="Postcode / Zip"
+              />
+              <button class="btn btn--black btn--cart-info">GET A QUOTE</button>
+            </form>
+            <div class="cart__total">
+              <div class="cart__subtotal text">
+                SUB TOTAL <span class="text">$900</span>
+              </div>
+              <div class="cart__grandtotal">
+                GRAND TOTAL <span class="text text--red">$900</span>
+              </div>
+              <hr />
+              <button class="btn btn--red text--uppercase cart__btn">
+                PROCEED TO CHECKOUT
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <subscribe-comp></subscribe-comp>
+      <footer-comp></footer-comp>
+      <error ref="error"></error>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Добавление компонентов основных блоков -->
+    <script src="js/components/ErrorComp.js"></script>
+    <script src="js/components/MenuComp.js"></script>
+    <script src="js/components/SearchFormComp.js"></script>
+    <script src="js/components/CartComp.js"></script>
+    <script src="js/components/ProductComp.js"></script>
+    <script src="js/components/FooterComp.js"></script>
+    <script src="js/components/SubscribeComp.js"></script>
+    <script src="js/components/ServicesComp.js"></script>
+    <script src="js/components/FeaturedItemsComp.js"></script>
+    <script src="js/components/OfferComp.js"></script>
+    <script src="js/components/BrandComp.js"></script>
+    <script src="js/components/HeaderComp.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

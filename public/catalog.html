@@ -1,0 +1,100 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalog</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="page">
+    <div id="app">
+      <header-comp ref="header">
+        <template v-slot:search-block>
+          <search-form
+            :search="userSearch"
+            v-on:searchchange="change"
+          ></search-form>
+        </template>
+        <template v-slot:cart-block>
+          <cart ref="cart"></cart>
+        </template>
+      </header-comp>
+      <div class="page-heading">
+        <div class="page-heading__inner container">
+          <h1 class="text text--red heading-1 text--uppercase">NEW ARRIVALS</h1>
+          <nav>
+            <a class="link page-heading__link text--gray" href="#">HOME</a>
+            <span class="page-heading__slash">/</span>
+            <a class="link page-heading__link text--gray" href="#">MEN</a>
+            <span class="page-heading__slash">/</span>
+            <a class="link page-heading__link text--gray" href="#"
+              >NEW ARRIVALS</a
+            >
+          </nav>
+        </div>
+      </div>
+      <filter-comp
+        ref="filter"
+        :price="priceSelected"
+        v-on:sortbyprice="sort"
+      ></filter-comp>
+      <div class="catalog container">
+        <div class="catalog__inner">
+          <products
+            ref="products"
+            :search="userSearch"
+            :price="priceSelected"
+          ></products>
+        </div>
+        <div class="catalog__toggle"></div>
+      </div>
+      <div class="pagination">
+        <div class="pagination__toggle">
+          <a href="#" class="pagination__left">
+            <img class="pagination__left" src="img/chevron-left.svg" alt="" />
+          </a>
+          <a href="#" class="link pagination__page">1</a>
+          <a href="#" class="link pagination__page">2</a>
+          <a href="#" class="link pagination__page">3</a>
+          <a href="#" class="link pagination__page">4</a>
+          <a href="#" class="link pagination__page">5</a>
+          <a href="#" class="link pagination__page">6.....20</a>
+          <a href="#" class="pagination__right">
+            <img src="img/chevron-right.svg" alt="" />
+          </a>
+        </div>
+      </div>
+      <services-comp></services-comp>
+      <subscribe-comp></subscribe-comp>
+      <footer-comp></footer-comp>
+      <error ref="error"></error>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Добавление компонентов основных блоков -->
+    <script src="js/components/ErrorComp.js"></script>
+    <script src="js/components/FilterComp.js"></script>
+    <script src="js/components/MenuComp.js"></script>
+    <script src="js/components/SearchFormComp.js"></script>
+    <script src="js/components/CartComp.js"></script>
+    <script src="js/components/ProductComp.js"></script>
+    <script src="js/components/FooterComp.js"></script>
+    <script src="js/components/SubscribeComp.js"></script>
+    <script src="js/components/ServicesComp.js"></script>
+    <script src="js/components/FeaturedItemsComp.js"></script>
+    <script src="js/components/OfferComp.js"></script>
+    <script src="js/components/BrandComp.js"></script>
+    <script src="js/components/HeaderComp.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
